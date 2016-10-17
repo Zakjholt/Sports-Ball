@@ -1,0 +1,23 @@
+.header {
+    text-align: center;
+}
+
+.card {
+    box-sizing: border-box;
+    width: 40%;
+    padding: 50px 8%;
+    margin: 10px 2%;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid grey;
+    background: azure;
+}
+
+.card:hover {
+    cursor: pointer;
+    background: lightslategrey;
+}
+
+.card:focus {
+    background: darkslategrey;
+}
