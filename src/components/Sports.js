@@ -8,7 +8,7 @@ class Sports extends Component {
       <div>
         <button className="card" onClick={() => this.chooseSport('baseball')}>Baseball</button>
         <button className="card" onClick={() => this.chooseSport('football')}>Football</button>
-        <button className="card" onClick={() => this.chooseSport('soccer')}>Soccer</button>
+        <button className="card" onClick={() => this.chooseSport('basketball')}>Basketball</button>
         <button className="card" onClick={() => this.chooseSport('hockey')}>Hockey</button>
         <Link to="games"><button>Find games</button></Link>
       </div>
