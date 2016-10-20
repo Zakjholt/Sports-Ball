@@ -1,23 +1,44 @@
 .header {
     text-align: center;
 }
-
+body {
+  background: #456990;
+  color: white;
+  font-weight: bold;
+}
 .card {
     box-sizing: border-box;
     width: 40%;
-    padding: 50px 8%;
+    padding: 50px 5%;
     margin: 10px 2%;
+    height: 150px;
     display: inline-block;
     text-align: center;
     border: 2px solid grey;
-    background: azure;
+    background: #028090;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25em;
 }
 
 .card:hover {
     cursor: pointer;
-    background: lightslategrey;
+    background: #e4fde1;
 }
 
-.card:focus {
-    background: darkslategrey;
+.logo {
+  width: 40%;
+  box-sizing: border-box;
+}
+
+.spacer {
+  width: 5%;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.back {
+  padding: 30px 10%;
+  background: white;
+  color: cadetblue;
 }

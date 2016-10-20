@@ -11,11 +11,12 @@ class GamesContainer extends Component {
             games: []
         }
     }
-    componentDidMount() {
+
+    componentWillMount() {
         let self = this
         let state = this.props.route.store.getState();
         const config = {
-            url: (state.sport + '/' + state.league + '/games'),
+            url: `${state.sport}/${state.league}/games`,
             method: 'get',
             baseURL: 'https://api.stattleship.com/',
             headers: {
@@ -24,25 +25,24 @@ class GamesContainer extends Component {
                 'Accept': 'application/vnd.stattleship.com; version=1'
             },
             params: {
-                status: 'in_progress'
+                on: 'today'
             }
         }
-        axios.request(config).then(function(games) {
+        axios.request(config).then((games) => {
             var gamesArray = []
             games.data.games.map((game) => {
-                gamesArray.push(game)
+                return gamesArray.push(game)
             });
-            console.log(gamesArray);
             self.setState({games: gamesArray})
         });
     }
-    render() {
 
+
+    render() {
 
         return (
             <div>
-            {console.log(this.state.games)}
-                <Games gamesArray={this.state.games}/>
+                <Games store={this.props.route.store} chooseGame={this.chooseGame} games={this.state.games}/>
             </div>
         );
 
