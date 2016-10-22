@@ -11,7 +11,8 @@ class MatchContainer extends Component {
             gameData: 'loading ...',
             dataGot: false,
             awayTeam: 'loading ...',
-            homeTeam: 'loading ...'
+            homeTeam: 'loading ...',
+            sport: 'loading ...'
         }
     }
     componentDidMount() {
@@ -48,7 +49,8 @@ class MatchContainer extends Component {
                     if (element.id === store.homeTeam) {
                         return element
                     }
-                })
+                }),
+                sport: store.sport
             })
             this.props.route.store.dispatch({type: 'GOT_DATA', gameData: this.state.gameData})
         });
@@ -57,7 +59,7 @@ class MatchContainer extends Component {
     render() {
         return (
             <div>
-                <Match game={this.state.gameData} homeTeam={this.state.homeTeam} awayTeam={this.state.awayTeam}/>
+                <Match game={this.state.gameData} sport={this.state.sport} homeTeam={this.state.homeTeam} awayTeam={this.state.awayTeam}/>
             </div>
         );
     }

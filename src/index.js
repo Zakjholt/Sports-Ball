@@ -19,13 +19,14 @@ import store from './store'
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path='/' component={Layout} store={store}>
-        <IndexRoute component={Sports} store={store} />
-        <Route path='games' component={GamesContainer} store={store}></Route>
-        <Route path='match' component={MatchContainer} store={store}></Route>
-      </Route>
-    </Router>
+  <Router history={browserHistory}>
+    <Route path='/'  component={Layout} store={store}>
+      <IndexRoute key='0' component={Sports} store={store} />
+      <Route path='games' key='1' component={GamesContainer} store={store}></Route>
+      <Route path='match' key='2' component={MatchContainer} store={store}></Route>
+    </Route>
+  </Router>
+
   </Provider>
   ,
   document.getElementById('root')

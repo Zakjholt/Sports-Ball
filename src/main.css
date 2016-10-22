@@ -9,9 +9,9 @@ body {
 .card {
     box-sizing: border-box;
     width: 40%;
-    padding: 50px 5%;
+    padding: 40px 5%;
     margin: 10px 2%;
-    height: 150px;
+    min-height: 140px;
     display: inline-block;
     text-align: center;
     border: 2px solid grey;
@@ -19,15 +19,21 @@ body {
     color: white;
     font-weight: bold;
     font-size: 1.25em;
+    overflow: hidden;
 }
 
 .card:hover {
     cursor: pointer;
     background: #e4fde1;
+    color: #028090;
+}
+
+.row {
+  display: block;
 }
 
 .logo {
-  width: 40%;
+  width: 20%;
   box-sizing: border-box;
 }
 
@@ -38,7 +44,30 @@ body {
 }
 
 .back {
+  margin-top: 50px;
   padding: 30px 10%;
   background: white;
   color: cadetblue;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 5px 10%;
+  background: rgba(0, 200, 150, .3)
+}
+
+strong {
+  color: black;
+}
+
+.example-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
 }
