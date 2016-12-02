@@ -5,6 +5,7 @@
   "devDependencies": {
     "react-scripts": "0.6.1"
   },
+  "homepage": "http://zakjholt.github.io/Sports-Ball",
   "dependencies": {
     "axios": "^0.15.3",
     "moment": "^2.15.1",
