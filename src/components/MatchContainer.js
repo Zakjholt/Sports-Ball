@@ -17,6 +17,7 @@ class MatchContainer extends Component {
     }
     componentDidMount() {
         let store = this.props.route.store.getState();
+        console.log(store);
         const config = {
             url: `${store.sport}/${store.league}/games`,
             method: 'get',

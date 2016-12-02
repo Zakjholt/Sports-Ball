@@ -11,9 +11,9 @@ class Games extends Component {
         let self = this;
         return (
             <div>
-                {this.props.games.map(function(game) {
+                {this.props.noGames ? 'No games on today' : this.props.games.map(function(game) {
                     return <Link to='match' key={game.id}>
-                        <div className='card' onClick={() => self.chooseGame(game.id, game.away_team_id, game.home_team_id)}>{game.label} <br/> {moment.tz(game.started_at, 'America/New_York').format('dddd, Do, h:mmA') + ' EST'}</div>
+                        <div className='card' onClick={() => self.chooseGame(game.id, game.away_team_id, game.home_team_id)}>{game.label} <br/> { game.started_at ?  moment.tz(game.started_at, 'America/New_York').format('dddd, Do, h:mmA') + ' EST' : null}</div>
                     </Link>
                 })}
                 <Link to='/'><div className="back">Back to Sports</div></Link>

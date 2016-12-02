@@ -8,7 +8,8 @@ class GamesContainer extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            games: []
+            noGames: false,
+            games: [{label: 'Loading...'}]
         }
     }
 
@@ -33,7 +34,12 @@ class GamesContainer extends Component {
             games.data.games.map((game) => {
                 return gamesArray.push(game)
             });
-            self.setState({games: gamesArray})
+            if (gamesArray.length !== 0) {
+              self.setState({games: gamesArray})
+            } else {
+              self.setState({noGames: true, games: [{label: 'No games on today'}]})
+            }
+
         });
     }
 
@@ -42,7 +48,7 @@ class GamesContainer extends Component {
 
         return (
             <div>
-                <Games store={this.props.route.store} chooseGame={this.chooseGame} games={this.state.games}/>
+                <Games store={this.props.route.store} noGames={this.state.noGames} chooseGame={this.chooseGame} games={this.state.games}/>
             </div>
         );
 
