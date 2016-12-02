@@ -1,5 +1,4 @@
 import { createStore } from 'redux';
-import { persistStore, autoRehydrate } from 'redux-persist';
 //initial store
 const initialState = {
   sport: 'none defined yet',
@@ -43,8 +42,7 @@ function sportApp(state = initialState, action) {
 }
 
 //Create store
-const store = createStore(sportApp, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), autoRehydrate(), undefined)
+const store = createStore(sportApp, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
-persistStore(store);
 
 export default store
