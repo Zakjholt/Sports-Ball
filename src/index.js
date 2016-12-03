@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import './main.css'
 
@@ -19,7 +19,7 @@ import store from './store'
 
 ReactDOM.render(
   <Provider store={store}>
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route path='/'  component={Layout} store={store}>
       <IndexRoute key='0' component={Sports} store={store} />
       <Route path='games' key='1' component={GamesContainer} store={store}></Route>
